@@ -9,11 +9,13 @@ class PinsController < ApplicationController
   end
 
   def new
-    @pin = Pin.new
+    #@pin = Pin.new #This was before added authentication and relationship with devise
+    @pin = current_user.pins.build
   end
 
   def create
-    @pin = Pin.new(pin_params)
+    #@pin = Pin.new(pin_params)
+    @pin = current_user.pins.build(pin_params) #This was before added authentication and relationship with devise
 
     if @pin.save
       redirect_to @pin, notice: 'Successfully created new pin.'
