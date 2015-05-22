@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -49,6 +48,12 @@ group :development, :test do
 
   gem 'factory_girl_rails', '~> 4.5.0'
 
+  gem 'mysql2', '~> 0.3.18'
+end
+
+group :production do
+  ruby '2.2.2'
+  gem 'pg', '~> 0.18.2'
 end
 
 gem 'yui-compressor', '~> 0.12.0'
@@ -56,7 +61,6 @@ gem 'haml', '~> 4.0.6'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'autoprefixer-rails'
 gem 'simple_form', '~> 3.1.0'
-gem 'mysql2', '~> 0.3.18'
 gem 'devise', '~> 3.4.1'
 gem 'paperclip', '~> 4.2.1'
 gem 'masonry-rails', '~> 0.2.4'

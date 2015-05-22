@@ -34,10 +34,15 @@ test:
   database: db/pin_board_test.sqlite3
 
 production:
-  <<: *default
-  host: 127.0.0.1
+  #<<: *default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+#  username: root
+#  password: root
+#  socket: /tmp/mysql.sock
+#  host: 127.0.0.1
   database: pin_board_production
-  username: root
 #  password: <%= ENV['PIN_BOARD_MYSQL_PASSWORD'] %>
 
 #  database: db/production.sqlite3
